@@ -4,7 +4,7 @@ const btnmodal = document.querySelector("#btn-modal");
 
 btnmodal.addEventListener("click", function () {
   if (parseInt(buyticket) <= 0) {
-    alert("please buying any tickets");
+    alert("please select atleast one seat to continue");
     return;
   }
 });
@@ -25,7 +25,7 @@ for (const key of allbtns) {
     buyticket = convertedSeat;
 
     if (convertedSeat > 4) {
-      alert("you have bought ticket only four");
+      alert("you have already selected four seats");
       return;
     }
 
@@ -67,7 +67,7 @@ cupponbtn.addEventListener("click", function () {
     Total_box.classList.remove("hidden");
     Total_box.classList.add("flex");
     Cuppon_box.classList.add("hidden");
-  } else if (cupponValue.value === "Couple 20") {
+  } else if (cupponValue.value === "CoupleForever") {
     DiscountTotal = (convertedGrandTotal * 20) / 100;
     convertedGrandTotal = convertedGrandTotal - DiscountTotal;
     Discount_price.innerText = DiscountTotal;
@@ -82,7 +82,7 @@ cupponbtn.addEventListener("click", function () {
   }
 });
 
-modal_Box.addEventListener("click", function (e) {});
+modal_Box.addEventListener("click", function (e) { });
 
 function setInnerText(id, value) {
   document.getElementById(id).innerText = value;
